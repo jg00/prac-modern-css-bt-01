@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+/* Variables */
+:root {
+  --page-section-color: #363227;
+}
+
 /* Utility */
 .container {
   max-width: 1100px;
@@ -38,12 +43,52 @@
   color: #333;
 }
 
+.btn-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.bg-dark {
+  background: #333;
+  color: white;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.bg-primary {
+  background: #f7c08a;
+  color: #333;
+}
+
 .clearfix:after {
   content: ".";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
+}
+
+.clr {
+  clear: both;
+}
+
+/* Font */
+.l-heading {
+  font-size: 40px;
+}
+
+/* Padding */
+.py-1 {
+  padding: 10px 0;
+}
+.py-2 {
+  padding: 20px 0;
+}
+.py-3 {
+  padding: 30px 0;
 }
 
 /* Main Styles */
@@ -70,7 +115,8 @@ p {
 
 /* Navbar */
 #navbar {
-  background: #363227;
+  /* background: #363227; */
+  background: var(--page-section-color);
   color: #fff;
   /* overflow: auto; */ /* -Alternative is to place clearfix to parent element with floated child elements. */
 }
@@ -138,4 +184,112 @@ p {
 #showcase .showcase-content p {
   padding-bottom: 20px;
   line-height: 1.7rem;
+}
+
+/* Home Info Section */
+#home-info {
+  height: 400px;
+}
+
+#home-info .info-img {
+  background: url("../img/photo-1.jpg") center center/cover no-repeat;
+  float: left;
+  width: 50%;
+  min-height: 100%;
+}
+
+#home-info .info-content {
+  float: right;
+  width: 50%;
+  height: 100;
+  text-align: center;
+  padding: 50px 30px;
+  overflow: hidden;
+}
+
+#home-info .info-content p {
+  padding-bottom: 30px;
+}
+
+/* Features */
+.box {
+  float: left;
+  width: 33.3%;
+  padding: 50px;
+  text-align: center;
+}
+
+.box i {
+  margin-bottom: 10px;
+}
+
+/* About */
+#about-info .info-right {
+  float: right;
+  width: 50%;
+  min-height: 100%;
+}
+
+#about-info .info-right img {
+  display: block;
+  margin: auto;
+  width: 70%;
+  border-radius: 50%;
+}
+
+#about-info .info-left {
+  float: left;
+  width: 50%;
+
+  padding-top: 1rem;
+}
+
+/* Testimonials */
+#testimonials {
+  height: 600px;
+  padding-top: 100px;
+  background: url("../img/test-bg.jpg") center center / cover no-repeat;
+}
+
+#testimonials h2 {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+#testimonials .testimonial {
+  padding: 20px;
+  margin-bottom: 40px;
+
+  opacity: 0.9;
+
+  /* Clipped edges */
+  --notchSize: 20px;
+  clip-path: polygon(
+    0% var(--notchSize),
+    var(--notchSize) 0%,
+    calc(100% - var(--notchSize)) 0%,
+    100% var(--notchSize),
+    100% calc(100% - var(--notchSize)),
+    calc(100% - var(--notchSize)) 100%,
+    var(--notchSize) 100%,
+    0% calc(100% - var(--notchSize))
+  );
+}
+
+#testimonials .testimonial img {
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Contact */
+
+/* Footer */
+#main-footer {
+  text-align: center;
+  background: var(--page-section-color);
+  color: #fff;
+  padding: 20px;
 }
