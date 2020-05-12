@@ -1,12 +1,93 @@
 :root {
-  --text-primary: #28a745;
-  --text-secondary: #0284d0;
+  --color-primary: #28a745;
+  --color-secondary: #0284d0;
+  --color-dark: #333;
+  --color-light: #f4f4f4;
 }
 
 .text-primary {
-  color: var(--text-primary);
+  color: var(--color-primary);
 }
 
 .text-secondary {
-  color: var(--text-secondary);
+  color: var(--color-secondary);
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.btn-dark {
+  background: var(--color-dark);
+  color: #fff;
+}
+
+.btn-light {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* Flex items */
+.flex-items {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.flex-items > div {
+  padding: 20px;
+}
+
+/* Flex columns*/
+.flex-columns .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid pink;
+}
+
+/* flex items of .flex-columns .row */
+.flex-columns .column {
+  /* Refer to each flex item */
+  flex-basis: 100%; /* Note: flex-basis depend on main-axis which depend on the container's flex-direction which above is set to row. */
+  flex: 1; /* Distribute remaining space equally among flex items. */
+
+  /* Make each .column a container */
+  display: flex;
+  flex-direction: column;
+  border: 1px dotted green;
+}
+
+/* 
+Important difference: 
+  flex: 1; (1 1 0)
+  flex-grow: 1; (1 1 auto) 
+*/
+
+.flex-columns .column .column-1,
+.flex-columns .column .column-2 {
+  height: 100%;
 }

@@ -37,7 +37,7 @@ img {
   width: 100%;
 }
 
-/* Navbar */
+/* Header - navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -52,20 +52,88 @@ img {
   padding: 0 30px;
 }
 
-.navbar a {
-  color: #fff;
-  padding: 10px 20px;
-  margin: 0 5px;
-}
-
-.navbar a:hover {
-  border-bottom: 2px solid var(--text-primary);
-}
-
 .navbar ul {
   display: flex;
 }
 
+.navbar a {
+  display: block;
+  height: 70px;
+  color: #fff;
+  padding: 25px 20px;
+  /* padding: 10px 20px; */
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  /* border-bottom: 2px solid var(--text-primary); */
+  background: var(--text-primary);
+}
+
 .navbar .logo {
   font-weight: 400;
+}
+
+/* Header - navbar, content divs */
+.hero {
+  background: url("../img/home/showcase.jpg") center center / cover no-repeat;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+}
+
+/* Header - content */
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  border: 1px solid green;
+}
+
+.hero .content h1 {
+  font-size: 55px;
+}
+
+.hero .content p {
+  font-size: 23px;
+  max-width: 600px;
+  margin: 20px 0 30px;
+}
+
+/* Overlay using ::before (default display:inline) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero * {
+  z-index: 10;
+}
+
+/* Section - About */
+/* Icons */
+.icons {
+  padding: 30px;
+}
+
+.icons h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.icons i {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
