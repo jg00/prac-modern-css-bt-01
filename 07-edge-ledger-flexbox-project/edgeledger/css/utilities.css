@@ -5,6 +5,7 @@
   --color-light: #f4f4f4;
 }
 
+/* Text */
 .text-primary {
   color: var(--color-primary);
 }
@@ -13,6 +14,7 @@
   color: var(--color-secondary);
 }
 
+/* Buttons and Backgrounds */
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -27,24 +29,33 @@
   opacity: 0.9;
 }
 
-.btn-primary {
+.btn-primary,
+.bg-primary {
   background: var(--color-primary);
   color: #fff;
 }
 
-.btn-secondary {
+.btn-secondary,
+.bg-secondary {
   background: var(--color-secondary);
   color: #fff;
 }
 
-.btn-dark {
+.btn-dark,
+.bg-dark {
   background: var(--color-dark);
   color: #fff;
 }
 
-.btn-light {
+.btn-light,
+.bg-light {
   background: var(--color-light);
   color: var(--color-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #fff;
 }
 
 /* Flex items */
@@ -66,28 +77,120 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
 }
 
-/* flex items of .flex-columns .row */
+/* Flex items of .flex-columns .row */
 .flex-columns .column {
-  /* Refer to each flex item */
-  flex-basis: 100%; /* Note: flex-basis depend on main-axis which depend on the container's flex-direction which above is set to row. */
-  flex: 1; /* Distribute remaining space equally among flex items. */
+  /* Refer to each flex item (ie flex-basis, flex-grow, flex-shrink are flex 'item' properties. */
+  flex-basis: 100%; /* Note: flex-basis here depend on main-axis which depend on the container's flex-direction which above is set to row. */
+  flex: 1; /* Distribute remaining space equally among flex items. Note: Here we are taking up the entire width of the row. */
+
+  /* 
+  Important difference: 
+    flex: 1; (1 1 0)
+    flex-grow: 1; (1 1 auto) 
+  */
 
   /* Make each .column a container */
-  display: flex;
-  flex-direction: column;
-  border: 1px dotted green;
+  /* display: flex; (Not really needed here) */
+  /* flex-direction: column; (Not really needed here)*/
+  /* border: 1px dotted green; */
 }
-
-/* 
-Important difference: 
-  flex: 1; (1 1 0)
-  flex-grow: 1; (1 1 auto) 
-*/
 
 .flex-columns .column .column-1,
 .flex-columns .column .column-2 {
   height: 100%;
 }
+
+.flex-columns img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /*  "cover" (overflows box but maintains ratio) */
+}
+
+.flex-columns .column-2 {
+  align-self: center;
+}
+
+.flex-columns .column-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px;
+}
+
+.flex-columns h2 {
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.flex-columns h4 {
+  margin-bottom: 10px;
+}
+
+.flex-columns p {
+  margin: 20px 0;
+}
+
+/* Section */
+.section-header {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.section-padding {
+  padding: 20px 20px 40px;
+}
+
+/* Flex grid */
+/* Reference before surrounding image with .image-container
+  .flex-grid .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  .flex-grid .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+*/
+
+/* Flex grid */
+/* Image surrounded with .image-container */
+.flex-grid .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-grid .column {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px dotted pink; */
+}
+
+.flex-grid .column .image-container {
+  height: 200px;
+  margin: 10px 0;
+}
+
+.flex-grid .column .image-container img {
+  height: 100%;
+  max-width: 310px;
+}
+
+/*  Blog - continue next */
